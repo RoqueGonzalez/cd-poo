@@ -1,5 +1,6 @@
 package com.campusdual.exercisespoo;
 
+
 public class Exercise07 {
     //Mostrar los primeros 15 números naturales
     //Sumar los primeros 100 números naturales
