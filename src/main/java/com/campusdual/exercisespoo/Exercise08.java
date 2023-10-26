@@ -1,5 +1,7 @@
 package com.campusdual.exercisespoo;
 
+import com.campusdual.util.Utils;
+
 import java.util.Scanner;
 
 public class Exercise08 {
@@ -23,10 +25,22 @@ public class Exercise08 {
         } while (numeroParaMostrar < 5);
         System.out.println("El numero que has escrito es: " + numeroParaMostrar);
     }
-
+    public static void mostrarSaludoConUtils(){
+        String nombreUsuario = Utils.string("Introduce tu nombre: ");
+        System.out.println("Hola " + nombreUsuario + "! ¿Como estás? ");
+    }
+    public static void pedirNumeroConUtils(){
+        int numeroParaMostrar;
+        do {
+            numeroParaMostrar = Utils.integer("Introduce un numero mayor que 5: ");
+        } while (numeroParaMostrar<5);
+        System.out.println(numeroParaMostrar);
+    }
 
     public static void main(String[] args) {
-        mostrarSaludo();
-        pedirNumero();
+//        mostrarSaludo();
+//        pedirNumero();
+        mostrarSaludoConUtils();
+        pedirNumeroConUtils();
     }
 }
