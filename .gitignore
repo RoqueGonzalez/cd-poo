@@ -41,3 +41,4 @@ build/
 .idea/misc.xml
 .idea/workspace.xml
 src/main/java/com/campusdual/exercisespoo/Exercise07.java
+.idea/uiDesigner.xml
