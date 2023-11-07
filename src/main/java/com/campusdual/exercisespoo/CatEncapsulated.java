@@ -29,103 +29,111 @@ Verás cómo afecta a los métodos estáticos
 public class CatEncapsulated {
     private String name;
     private String breed;
-    private static int age;
+    private String sex;
+    private int age;
     private String hair;
-    private static String colour;
-    private Boolean castrated;
+    private String colour;
+    private boolean castrated;
     private String eyeColour = "Green";
-    public CatEncapsulated(String name, String breed, String hair, Boolean castrated, String eyeColour) {
+
+    public CatEncapsulated(String name, String breed, String sex, int age, String hair, String colour,
+                           boolean castrated) {
         this.name = name;
         this.breed = breed;
+        this.sex = sex;
+        this.age = age;
         this.hair = hair;
+        this.colour = colour;
         this.castrated = castrated;
-        this.eyeColour = eyeColour;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
     public void setName(String name) {
         this.name = name;
     }
     public String getBreed() {
-        return breed;
+        return this.breed;
     }
     public void setBreed(String breed) {
         this.breed = breed;
     }
-    public static int getAge() {
-        return age;
+    public String getSex() {
+        return this.sex;
     }
-    public static void setAge(int newAge) {
-        CatEncapsulated.age = newAge;
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+    public int getAge() {
+        return this.age;
+    }
+    public void setAge(int age) {
+        if (age > 0) {
+            this.age = age;
+        } else {
+            System.out.println("La edad debe estar en positivo");
+        }
     }
     public String getHair() {
-        return hair;
+        return this.hair;
     }
     public void setHair(String hair) {
         this.hair = hair;
     }
-    public static String getColour() {
-        return colour;
+    public String getColour() {
+        return this.colour;
     }
-    public static void setColour(String newColour) {
-        CatEncapsulated.colour = newColour;
+    public void setColour(String colour) {
+        this.colour = colour;
     }
-    public Boolean getCastrated() {
-        return castrated;
+    public boolean isCastrated() {
+        return this.castrated;
     }
-    public void setCastrated(Boolean castrated) {
+    public void setCastrated(boolean castrated) {
         this.castrated = castrated;
     }
     public String getEyeColour() {
-        return eyeColour;
+        return this.eyeColour;
     }
-    public void setEyeColour(String newEyeColour) {
-        this.eyeColour = newEyeColour;
+    public void setEyeColour(String eyeColour) {
+        this.eyeColour = eyeColour;
     }
 
-    public static void changeColour(String newColour){
-        setColour(newColour);
-    }
-    public void changeEyeColour(String newEyecolour){
-        setEyeColour(newEyecolour);
-    }
-    public static void changeAge(int newAge){
-        if(newAge>0){
-            CatEncapsulated.setAge(newAge);
-        } else {
-            System.out.println("Tiene que ser un nº positivo");
-        }
-    }
-    public void showAge(){
-        System.out.println("La edad del gato es: ");
-    }
-    public void castrar(){
-        setCastrated(true);
-    }
-    public boolean isCastrated(){
-        return this.castrated;
-    }
-    public void catDetails() {
-        System.out.println("Nombre: " + getName());
-        System.out.println("Raza: " + getBreed());
-        System.out.println("Edad: " + CatEncapsulated.getAge() + " meses");
-        System.out.println("Tiene el pelo " + getHair() + " y de color " + CatEncapsulated.getColour());
-        System.out.println("Castrado: " + (getCastrated() ? "Sí" : "No"));
-        System.out.println("Tiene los ojos: " + getEyeColour() + "\n\n");
+    public void catEncapsulatedDetails() {
+        System.out.println("Nombre: " + this.getName());
+        System.out.println("Raza: " + this.getBreed());
+        System.out.println("Sexo: " + this.getSex());
+        System.out.println("Edad: " + this.getAge() + " meses");
+        System.out.println("Tiene el pelo " + this.getHair() + " y de color " + this.getColour());
+        System.out.println("Castrado: " + (this.isCastrated() ? "Sí" : "No"));
+        System.out.println("Tiene los ojos: " + this.getEyeColour() + "\n\n");
     }
     public static void main(String[] args) {
-        Cat cat1 = new Cat("Peke", "Persa", 10, "Corto", "Negro", Boolean.FALSE);
-        Cat cat2 = new Cat("Toti", "Esfinge", 20, "Corto", "Negro", Boolean.FALSE);
-        Cat cat3 = new Cat("Messi", "Siamesa", 30, "Corto", "Negro", Boolean.FALSE);
+        CatEncapsulated catE1 = new CatEncapsulated("Peke", "Persa", "Macho", 10, "Corto",
+                "Negro",false);
+        CatEncapsulated catE2 = new CatEncapsulated("Toti", "Esfinge", "Macho",20,
+                "Corto", "Negro", false);
+        CatEncapsulated catE3= new CatEncapsulated("Messi", "Siamesa", "Macho",30,
+                "Corto", "Negro", false);
 
-        cat1.castrar();
-        cat2.castrar();
+        catE1.setCastrated(true);
+        catE2.setCastrated(true);
 
-        CatEncapsulated.changeColour("Marrón");
+        catE1.setColour("Marron");
+        catE2.setColour("Gris");
 
-        CatEncapsulated.changeAge(25);
+        catE3.setEyeColour("Amarillo");
+
+        catE3.setAge(20);
+
+        catE1.catEncapsulatedDetails();
+        catE2.catEncapsulatedDetails();
+        catE3.catEncapsulatedDetails();
+
+
+
+
 
 
     }

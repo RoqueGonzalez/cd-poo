@@ -32,7 +32,7 @@ public class Cat {
     public static int age;
     public String hair;
     public static String colour;
-    public Boolean castrated;
+    public boolean castrated;
     private String eyeColour = "Green";
 
     public Cat(String name, String breed, int age, String hair, String colour, Boolean castrated) {
@@ -59,11 +59,10 @@ public class Cat {
     public void showAge() {
         System.out.println("La edad del gato es: " + Cat.age);
     }
-
     public void castrar(){
         this.castrated = true;
     }
-    public Boolean isCastrated(){
+    public boolean isCastrated(){
         return this.castrated;
     }
     public void catDetails() {
@@ -76,9 +75,9 @@ public class Cat {
     }
 
     public static void main(String[] args) {
-        Cat cat1 = new Cat("Peke","Persa",10,"Corto","Negro",Boolean.FALSE);
-        Cat cat2 = new Cat("Toti","Esfinge",20,"Corto","Negro",Boolean.FALSE);
-        Cat cat3 = new Cat("Messi","Siamesa",30,"Corto","Negro",Boolean.FALSE);
+        Cat cat1 = new Cat("Peke","Persa",10,"Corto","Negro",false);
+        Cat cat2 = new Cat("Toti","Esfinge",20,"Corto","Negro",false);
+        Cat cat3 = new Cat("Messi","Siamesa",30,"Corto","Negro",false);
 
         cat1.castrar();
         cat2.castrar();
